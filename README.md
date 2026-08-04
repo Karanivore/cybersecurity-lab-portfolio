@@ -1,7 +1,7 @@
 # Cybersecurity Portfolio Labs
 
-A portfolio of hands-on cybersecurity labs — each with **working code you
-can run**, realistic data, and a **client-ready written deliverable**
+A portfolio of hands on cybersecurity labs  each with **working code you
+can run**, realistic data, and a **client ready written deliverable**
 (assessment, report, roadmap, or policy) in the exact format employers
 and consulting clients expect.
 
@@ -16,7 +16,7 @@ The labs are organized into two tracks:
   consultant** produces. *Start here if you're targeting advisory/GRC
   roles.*
 - **Technical / Analyst track (01–06)** — offensive and defensive
-  hands-on labs (SOC, pentest, IR, cloud) that give the consultant track
+  hands on labs (SOC, pentest, IR, cloud) that give the consultant track
   its technical credibility.
 
 Every script runs on Python 3.11's standard library alone (one optional
