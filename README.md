@@ -1,129 +1,132 @@
 # Cybersecurity Portfolio Labs
 
-A portfolio of hands on cybersecurity labs  each with **working code you
-can run**, realistic data, and a **client ready written deliverable**
-(assessment, report, roadmap, or policy) in the exact format employers
-and consulting clients expect.
+This repository contains hands-on cybersecurity labs covering security automation, SOC analysis, vulnerability assessment, incident response, network hardening, cloud security, and governance, risk, and compliance.
 
-**Start with [`index.html`](./index.html)** — a visual landing page
-indexing all 16 labs by track (open it locally, or host it free via
-GitHub Pages: *Settings → Pages → Deploy from branch → root*).
+Each lab includes documentation, sample data, and either runnable scripts or a written assessment deliverable. All sample organizations, users, systems, findings, and business data are fictional.
 
-The labs are organized into two tracks:
+**Start with [`index.html`](./index.html)** for a visual overview of all 16 labs. The landing page can be opened locally or hosted through GitHub Pages.
 
-- **Consultant / GRC track (07–16)** — risk, compliance, and advisory
-  work: the frameworks, assessments, and deliverables a **cybersecurity
-  consultant** produces. *Start here if you're targeting advisory/GRC
-  roles.*
-- **Technical / Analyst track (01–06)** — offensive and defensive
-  hands on labs (SOC, pentest, IR, cloud) that give the consultant track
-  its technical credibility.
+The portfolio is organized into two tracks:
 
-Every script runs on Python 3.11's standard library alone (one optional
-feature uses `requests`; Lab 03 uses Docker; Lab 05 uses `nft`/Suricata
-syntax). Nothing requires paid tools or a live cloud account.
+- **Consultant / GRC track (07–16):** risk assessments, compliance mapping, policy development, audit readiness, privacy, third-party risk, regulatory analysis, and security transformation.
+- **Technical / Analyst track (01–06):** Python security automation, SOC log analysis, vulnerability assessment, incident response, network defense, and cloud security.
+
+Most scripts use the Python 3.11 standard library. One optional feature uses `requests`, Lab 03 uses Docker, and Lab 05 includes `nftables` and Suricata configuration examples. No paid tools or live cloud accounts are required.
 
 ---
 
-## Consultant / GRC track
+## Consultant / GRC Track
 
 | # | Lab | Deliverable | Frameworks |
 |---|---|---|---|
-| [07](./07-nist-csf-maturity-assessment) | **NIST CSF 2.0 Maturity Assessment** | Maturity report + gap analysis + remediation roadmap | NIST CSF 2.0 |
-| [08](./08-cyber-risk-register) | **Cyber Risk Register & Quantification** | Risk register + FAIR-style Monte Carlo ALE report | 5×5 risk model, FAIR |
-| [09](./09-compliance-crosswalk) | **Compliance Framework Crosswalk** | Multi-framework coverage/gap report + control lookup | CSF, 800-53, ISO 27001, CIS v8, SOC 2 |
-| [10](./10-vendor-risk-assessment) | **Third-Party / Vendor Risk Assessment** | Vendor tiering report + remediation asks | TPRM, SIG-lite |
-| [11](./11-soc2-iso27001-readiness) | **SOC 2 / ISO 27001 Readiness Assessment** | Readiness score + phased remediation roadmap | SOC 2 TSC, ISO 27001:2022 |
-| [12](./12-security-policy-suite) | **ISMS Security Policy Suite** | 5 policies + Annex A coverage checker | ISO 27001:2022 |
-| [13](./13-itgc-sox-controls-testing) | **ITGC / SOX Controls Testing** | IT-audit workpaper: sampling, exceptions, deficiency evaluation | SOX 404, SOC 1/SOC 2, ITGC |
-| [14](./14-privacy-gdpr-assessment) | **Privacy & Data Protection Assessment** | GDPR/CCPA assessment: DPIA, lawful basis, transfers, DSAR | GDPR, CCPA/CPRA |
-| [15](./15-fs-regulatory-compliance) | **FS Regulatory Compliance** | DORA + NYDFS 500 gap assessment by regulation & pillar | DORA, NYDFS Part 500 |
-| [16](./16-zero-trust-maturity) | **Zero Trust Maturity Assessment** | ZTMM current-vs-target + phased Zero Trust roadmap | CISA ZTMM 2.0 |
+| [07](./07-nist-csf-maturity-assessment) | **NIST CSF 2.0 Maturity Assessment** | Maturity report, gap analysis, and remediation roadmap | NIST CSF 2.0 |
+| [08](./08-cyber-risk-register) | **Cyber Risk Register and Quantification** | Risk register and FAIR-style Monte Carlo ALE report | 5×5 risk model, FAIR |
+| [09](./09-compliance-crosswalk) | **Compliance Framework Crosswalk** | Multi-framework coverage report, gap analysis, and control lookup | NIST CSF, NIST 800-53, ISO 27001, CIS Controls v8, SOC 2 |
+| [10](./10-vendor-risk-assessment) | **Third-Party Risk Assessment** | Vendor tiering report and remediation requirements | TPRM, SIG-lite |
+| [11](./11-soc2-iso27001-readiness) | **SOC 2 and ISO 27001 Readiness Assessment** | Readiness score and phased remediation roadmap | SOC 2 TSC, ISO 27001:2022 |
+| [12](./12-security-policy-suite) | **ISMS Security Policy Suite** | Five security policies and an Annex A coverage checker | ISO 27001:2022 |
+| [13](./13-itgc-sox-controls-testing) | **ITGC and SOX Controls Testing** | IT audit workpaper covering sampling, exceptions, and deficiency evaluation | SOX 404, SOC 1, SOC 2, ITGC |
+| [14](./14-privacy-gdpr-assessment) | **Privacy and Data Protection Assessment** | Privacy assessment covering DPIA, lawful basis, transfers, and DSAR processes | GDPR, CCPA/CPRA |
+| [15](./15-fs-regulatory-compliance) | **Financial Services Regulatory Compliance** | DORA and NYDFS Part 500 gap assessment | DORA, NYDFS Part 500 |
+| [16](./16-zero-trust-maturity) | **Zero Trust Maturity Assessment** | Current-state assessment, target-state scoring, and phased roadmap | CISA ZTMM 2.0 |
 
-**Why this track for a consultant résumé:** advisory work is judged on
-framework fluency, risk quantification, compliance mapping, and clear
-written deliverables — not on running exploits. These ten labs produce the
-actual artifacts of a consulting engagement (maturity assessment,
-quantified risk register, control crosswalk, vendor assessment, audit
-readiness, policy suite, ITGC/SOX controls testing, privacy assessment,
-regulatory gap analysis, and a Zero Trust roadmap), and the sample data
-deliberately cross-references the technical labs so findings roll up into
-board-level risk language.
+These labs focus on practical governance and technology-risk activities, including control assessment, risk documentation, policy development, audit testing, regulatory analysis, and remediation planning.
 
-## Technical / Analyst track
+## Technical / Analyst Track
 
-| # | Lab | Core skill area |
+| # | Lab | Core Skill Area |
 |---|---|---|
-| [01](./01-python-security-toolkit) | Python Security Automation Toolkit | Network recon, password auditing, hash analysis |
-| [02](./02-soc-log-analysis-siem) | SOC Log Analysis & SIEM Detection Engine | Log correlation, detection engineering, MITRE ATT&CK |
-| [03](./03-vulnerability-assessment-lab) | Vulnerability Assessment Lab | OWASP Top 10, custom scanning, CVSS scoring |
-| [04](./04-incident-response-playbook) | Incident Response & Timeline Reconstruction | NIST SP 800-61 IR, evidence correlation |
-| [05](./05-network-hardening-ids) | Network Hardening & IDS | Segmentation, firewall-as-code, Suricata rules |
-| [06](./06-cloud-security-audit) | Cloud (AWS) Security Audit Tool | CIS AWS Benchmark, IAM/S3 posture auditing |
+| [01](./01-python-security-toolkit) | **Python Security Automation Toolkit** | Network reconnaissance, password auditing, and hash analysis |
+| [02](./02-soc-log-analysis-siem) | **SOC Log Analysis and SIEM Detection Engine** | Log correlation, detection engineering, and MITRE ATT&CK mapping |
+| [03](./03-vulnerability-assessment-lab) | **Vulnerability Assessment Lab** | OWASP Top 10, custom scanning, and CVSS scoring |
+| [04](./04-incident-response-playbook) | **Incident Response and Timeline Reconstruction** | Evidence correlation, incident documentation, and NIST SP 800-61 concepts |
+| [05](./05-network-hardening-ids) | **Network Hardening and IDS** | Network segmentation, firewall configuration, and Suricata rules |
+| [06](./06-cloud-security-audit) | **AWS Security Audit Tool** | IAM review, S3 posture analysis, and CIS AWS Benchmark checks |
 
 ---
 
-## Quick start
+## Quick Start
+
+Clone the repository:
 
 ```bash
-git clone <this-repo>
-cd Cybersecurity
+git clone https://github.com/Karanivore/cybersecurity-lab-portfolio.git
+cd cybersecurity-lab-portfolio
+```
 
-# Consultant track — generate a NIST CSF maturity assessment:
+Generate a NIST CSF maturity assessment:
+
+```bash
 python3 07-nist-csf-maturity-assessment/scripts/csf_maturity.py
+```
 
-# ...an ITGC/SOX controls-testing workpaper (Big Four IT-audit):
+Generate an ITGC and SOX controls-testing workpaper:
+
+```bash
 python3 13-itgc-sox-controls-testing/scripts/itgc_test.py
+```
 
-# ...or a quantified cyber risk register:
+Generate a quantified cyber risk register:
+
+```bash
 python3 08-cyber-risk-register/scripts/risk_analysis.py
+```
 
-# Technical track — run the SIEM detection engine:
+Run the SOC detection engine:
+
+```bash
 python3 02-soc-log-analysis-siem/scripts/detection_engine.py
 ```
 
-Each lab folder has its own `README.md` with usage, sample output, skills
-demonstrated, and **ready-to-paste résumé bullet points**.
+Each lab folder contains its own `README.md` with setup instructions, usage examples, sample output, technical notes, and key outcomes.
 
-## How the two tracks fit a consultant résumé
+## How the Labs Connect
 
-A strong consulting candidate shows **advisory depth** *and* the
-**technical credibility** to back the advice. The consultant track (07–16)
-demonstrates you can run an engagement end to end; the technical track
-(01–06) demonstrates you understand what you're advising on. Together they
-cover the security lifecycle — **govern** (07, 12), **assess** (08–11, 14,
-15, 03, 06), **assure** (13), **transform** (16), **detect** (01, 02),
-**protect** (05), and **respond** (04) — which is a far stronger signal
-than several projects in one narrow niche.
+The two tracks are designed to show both technical and governance perspectives.
 
-## Alignment to Big Four cyber & technology-risk service lines
+The technical labs generate findings such as suspicious authentication activity, software vulnerabilities, insecure cloud configurations, weak network controls, and incident evidence.
 
-The consultant track maps directly onto how a Big Four advisory practice
-(e.g. KPMG) structures its cyber and technology-risk work:
+The GRC labs use similar findings as inputs for risk registers, maturity assessments, control testing, vendor reviews, compliance mapping, policy development, and remediation planning.
 
-| Service line (typical) | Relevant labs |
+Together, the labs cover several parts of the security lifecycle:
+
+- **Govern:** NIST CSF maturity, security policy, and Zero Trust planning
+- **Assess:** risk analysis, vulnerability assessment, cloud review, privacy assessment, and regulatory gap analysis
+- **Protect:** network hardening, firewall rules, identity controls, and security policies
+- **Detect:** SOC log analysis, detection rules, and security automation
+- **Respond:** incident-response planning, evidence review, and timeline reconstruction
+- **Assure:** ITGC testing, compliance mapping, and audit-readiness assessment
+
+## Financial Services and Technology-Risk Relevance
+
+Several labs address security and control areas commonly encountered in financial-services and enterprise technology environments:
+
+| Area | Relevant Labs |
 |---|---|
-| **Cyber strategy & transformation** (maturity, target operating model, Zero Trust, roadmaps) | 07 (CSF maturity), 08 (risk quantification), 16 (Zero Trust) |
-| **Governance, risk & compliance** (framework alignment, policy, regulatory readiness) | 09 (crosswalk), 11 (SOC 2 / ISO 27001), 12 (ISMS policy) |
-| **Technology risk & controls assurance** (SOX ITGC, SOC 1/SOC 2 attestation, IT audit) | 13 (ITGC/SOX testing), 11 (readiness) |
-| **Privacy & data protection** (GDPR/CCPA, DPIA, data governance) | 14 (privacy assessment) |
-| **Financial-services regulatory** (DORA, NYDFS, resilience) | 15 (FS regulatory) |
-| **Third-party / supply-chain risk** | 10 (vendor risk) |
-| **Cyber defense & managed services** (SOC, detection, IR, cloud) | 01, 02, 04, 06 |
-| **Application & infrastructure security testing** | 03 (web app / OWASP), 05 (network/IDS) |
+| Cybersecurity governance and maturity | 07, 12, 16 |
+| Cyber risk identification and quantification | 08 |
+| Compliance and control mapping | 09, 11 |
+| Third-party and vendor risk | 10 |
+| IT general controls and audit testing | 13 |
+| Privacy and data protection | 14 |
+| Financial-services regulation | 15 |
+| SOC monitoring and detection | 02 |
+| Incident response | 04 |
+| Cloud and infrastructure security | 05, 06 |
+| Application and vulnerability assessment | 03 |
+| Security automation | 01 |
 
-Interviewing for a Big Four technology-risk or cyber role, the
-highest-signal labs are **13 (ITGC/SOX controls testing)** — because
-IT-audit and SOC attestation are core to a licensed audit firm —
-**07/08/16 (maturity, risk quantification, Zero Trust)** for cyber
-transformation advisory, and **14/15 (privacy, FS regulatory)** which
-match KPMG's large privacy and financial-services regulatory practices.
-Each is a talking point you can walk an interviewer through end to end.
+## Ethical Use
 
-## Ethical use
+All scanning, password auditing, hash analysis, exploitation, and security-testing tools in this repository are intended only for:
 
-All scanning, cracking, and exploitation tooling here is for systems you
-own or are explicitly authorized to test — the Docker target in Lab 03,
-your own local host, or a sanctioned lab. All "client" data in the
-consultant track is illustrative and fictional. None of this code should
-be pointed at third-party systems without written authorization.
+- Systems you own
+- Systems you are explicitly authorized to test
+- Local laboratory environments
+- Purpose-built vulnerable applications
+- Fictional datasets included in the repository
+
+Do not run these tools against third-party systems, networks, accounts, or data without written authorization.
+
+All client names, organizations, users, findings, and business scenarios included in the GRC labs are fictional and are provided only for educational and portfolio purposes.
+````
