@@ -1,0 +1,24 @@
+{
+  "engagement": {
+    "client": "Contoso Financial Services (illustrative)",
+    "assessor": "Cyber Transformation Practice",
+    "model": "CISA Zero Trust Maturity Model 2.0",
+    "date": "2026-07-30",
+    "stages": {
+      "0": "Traditional - manual, static, perimeter-based",
+      "1": "Initial - some automation, starting to integrate",
+      "2": "Advanced - automated controls, centralized visibility, policy-based",
+      "3": "Optimal - fully automated, dynamic, continuous enforcement"
+    }
+  },
+  "pillars": [
+    {"pillar": "Identity",                    "type": "pillar",       "current": 2, "target": 3, "notes": "MFA broadly deployed; moving toward phishing-resistant + continuous auth. Ties to Lab 6 IAM findings."},
+    {"pillar": "Devices",                     "type": "pillar",       "current": 1, "target": 3, "notes": "EDR deployed but device compliance not enforced as an access condition."},
+    {"pillar": "Networks",                    "type": "pillar",       "current": 1, "target": 3, "notes": "Partial segmentation (Lab 5); macro-segmentation only, no per-session policy."},
+    {"pillar": "Applications & Workloads",    "type": "pillar",       "current": 1, "target": 2, "notes": "Some app-level authz; workloads not continuously authorized."},
+    {"pillar": "Data",                        "type": "pillar",       "current": 1, "target": 3, "notes": "Classification policy exists (Lab 12) but tagging/DLP not automated; encryption inconsistent."},
+    {"pillar": "Visibility & Analytics",      "type": "cross_cutting","current": 2, "target": 3, "notes": "SIEM in place (Lab 2); cloud/OT telemetry gaps remain."},
+    {"pillar": "Automation & Orchestration",  "type": "cross_cutting","current": 1, "target": 3, "notes": "Limited SOAR; response largely manual (see Lab 4 containment timing)."},
+    {"pillar": "Governance",                  "type": "cross_cutting","current": 2, "target": 3, "notes": "Policy suite and risk governance maturing (Labs 7, 8, 12); not yet dynamic/policy-as-code."}
+  ]
+}

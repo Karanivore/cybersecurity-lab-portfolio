@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--
+  Cybersecurity & Technology Risk Portfolio — landing page.
+  Self-contained (no external resources). Drop-in for GitHub Pages:
+  Settings → Pages → Deploy from branch → root. Then browse the repo
+  folders for each lab's code and generated deliverable.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cybersecurity &amp; Technology Risk Portfolio</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --text: #1a1f2b;
+    --muted: #5a6472;
+    --border: #dfe3ea;
+    --accent: #1a56db;
+    --accent-2: #0b7285;
+    --consult: #1a56db;
+    --tech: #0b7285;
+    --shadow: 0 1px 2px rgba(16,24,40,.06), 0 4px 16px rgba(16,24,40,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0f16;
+      --surface: #141925;
+      --surface-2: #1b2130;
+      --text: #e8ecf3;
+      --muted: #9aa6b8;
+      --border: #262d3d;
+      --accent: #6ea8fe;
+      --accent-2: #4dd0e1;
+      --consult: #6ea8fe;
+      --tech: #4dd0e1;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f7f9; --surface: #fff; --surface-2: #eef1f5; --text: #1a1f2b;
+    --muted: #5a6472; --border: #dfe3ea; --accent: #1a56db; --accent-2: #0b7285;
+    --consult: #1a56db; --tech: #0b7285; --shadow: 0 1px 2px rgba(16,24,40,.06), 0 4px 16px rgba(16,24,40,.06);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0c0f16; --surface: #141925; --surface-2: #1b2130; --text: #e8ecf3;
+    --muted: #9aa6b8; --border: #262d3d; --accent: #6ea8fe; --accent-2: #4dd0e1;
+    --consult: #6ea8fe; --tech: #4dd0e1; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header {
+    background:
+      radial-gradient(1200px 400px at 12% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent),
+      radial-gradient(900px 380px at 100% 0%, color-mix(in srgb, var(--accent-2) 20%, transparent), transparent),
+      var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner { padding: 56px 20px 44px; max-width: 1120px; margin: 0 auto; }
+  .eyebrow {
+    letter-spacing: .12em; text-transform: uppercase; font-size: 12px;
+    font-weight: 700; color: var(--accent); margin: 0 0 12px;
+  }
+  h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -.02em; }
+  .lede { font-size: clamp(16px, 2.4vw, 19px); color: var(--muted); max-width: 720px; margin: 0 0 22px; }
+  .byline { font-weight: 600; color: var(--text); }
+  .stats { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 26px; }
+  .stat .n { font-size: 26px; font-weight: 750; color: var(--text); }
+  .stat .l { font-size: 13px; color: var(--muted); }
+  .contact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .contact a {
+    display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+    font-size: 14px; font-weight: 600; color: var(--text);
+    border: 1px solid var(--border); background: var(--surface);
+    padding: 8px 14px; border-radius: 999px; transition: border-color .15s, transform .15s;
+  }
+  .contact a:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+  /* Sections */
+  section { padding: 44px 0 8px; }
+  .section-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .section-head h2 { font-size: 22px; margin: 0; letter-spacing: -.01em; }
+  .section-head .tag { font-size: 12.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+  .tag.consult { color: var(--consult); background: color-mix(in srgb, var(--consult) 14%, transparent); }
+  .tag.tech { color: var(--tech); background: color-mix(in srgb, var(--tech) 14%, transparent); }
+  .section-sub { color: var(--muted); margin: 6px 0 22px; max-width: 760px; }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .card {
+    display: flex; flex-direction: column; text-decoration: none; color: inherit;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 18px 16px; box-shadow: var(--shadow);
+    transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--rail, var(--accent)); opacity: .0; transition: opacity .16s;
+  }
+  .card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--rail, var(--accent)) 55%, var(--border)); }
+  .card:hover::before { opacity: 1; }
+  .card.consult { --rail: var(--consult); }
+  .card.tech { --rail: var(--tech); }
+  .card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .badge {
+    flex: none; width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
+    font-weight: 750; font-size: 13px; color: #fff; background: var(--rail, var(--accent));
+  }
+  .card h3 { font-size: 15.5px; margin: 0; line-height: 1.25; }
+  .card p { font-size: 13.5px; color: var(--muted); margin: 0 0 12px; flex: 1; }
+  .deliverable { font-size: 12.5px; color: var(--text); margin: 0 0 12px; }
+  .deliverable b { color: var(--muted); font-weight: 600; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+  .pill {
+    font-size: 11.5px; font-weight: 600; color: var(--muted);
+    background: var(--surface-2); border: 1px solid var(--border);
+    padding: 3px 9px; border-radius: 999px;
+  }
+  .card .go { margin-top: 12px; font-size: 13px; font-weight: 650; color: var(--rail, var(--accent)); }
+
+  /* KPMG mapping */
+  .map { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+  .map .maprow { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: 0; border-top: 1px solid var(--border); }
+  .map .maprow:first-child { border-top: 0; }
+  .map .k { padding: 14px 18px; font-weight: 650; font-size: 14px; background: var(--surface-2); }
+  .map .v { padding: 14px 18px; font-size: 13.5px; color: var(--muted); }
+  @media (max-width: 620px) { .map .maprow { grid-template-columns: 1fr; } .map .k { border-bottom: 1px solid var(--border); } }
+
+  .note {
+    margin: 26px 0 0; padding: 14px 16px; border-radius: 12px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--muted); font-size: 13px;
+  }
+  footer { margin-top: 40px; border-top: 1px solid var(--border); padding: 26px 0 48px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  .theme-toggle {
+    position: fixed; right: 16px; top: 16px; z-index: 10;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 7px 13px; font-size: 13px; font-weight: 600; cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="(function(r){var c=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.setAttribute('data-theme',c==='dark'?'light':'dark');})(document.documentElement)">◐ Theme</button>
+
+<header>
+  <div class="header-inner">
+    <p class="eyebrow">Cyber Security &amp; Technology Risk</p>
+    <h1>Cybersecurity Consulting Portfolio</h1>
+    <p class="lede">
+      Sixteen hands-on labs — each with <b>working code</b>, realistic data, and a
+      <b>client-ready deliverable</b>. Built to show both advisory depth and the technical
+      credibility behind the advice, aligned to Big Four cyber &amp; technology-risk practice.
+      <br><span class="byline">Karan Sandhu</span>
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="n">16</div><div class="l">hands-on labs</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">consulting / GRC</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">technical / analyst</div></div>
+      <div class="stat"><div class="n">15+</div><div class="l">frameworks covered</div></div>
+    </div>
+    <div class="contact">
+      <a href="mailto:ravkaur534@gmail.com">✉ Email</a>
+      <a href="https://www.linkedin.com/in/karan-sandhu-16a24b340/">in LinkedIn</a>
+      <a href="https://github.com/Karanivore">◇ GitHub</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="section-head">
+      <h2>Consultant / GRC track</h2>
+      <span class="tag consult">Advisory · Risk · Compliance</span>
+    </div>
+    <p class="section-sub">
+      The frameworks, assessments, and deliverables a cyber &amp; technology-risk consultant produces.
+      Each tool is data-driven and auto-generates the client report.
+    </p>
+    <div class="grid">
+
+      <a class="card consult" href="07-nist-csf-maturity-assessment/">
+        <div class="card-top"><span class="badge">07</span><h3>NIST CSF 2.0 Maturity Assessment</h3></div>
+        <p>Scores all 22 categories across the six Functions; heat map, gap analysis, remediation roadmap.</p>
+        <div class="deliverable"><b>Deliverable:</b> Maturity assessment report</div>
+        <div class="pills"><span class="pill">NIST CSF 2.0</span><span class="pill">Maturity</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="08-cyber-risk-register/">
+        <div class="card-top"><span class="badge">08</span><h3>Cyber Risk Register &amp; Quantification</h3></div>
+        <p>Qualitative 5×5 register plus a FAIR-style Monte Carlo estimate of Annualized Loss Expectancy.</p>
+        <div class="deliverable"><b>Deliverable:</b> Risk assessment + ALE report</div>
+        <div class="pills"><span class="pill">FAIR</span><span class="pill">Monte Carlo</span><span class="pill">Risk quant</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="09-compliance-crosswalk/">
+        <div class="card-top"><span class="badge">09</span><h3>Compliance Framework Crosswalk</h3></div>
+        <p>Maps control themes across five frameworks; per-framework coverage, gaps, reverse control lookup.</p>
+        <div class="deliverable"><b>Deliverable:</b> Crosswalk coverage report</div>
+        <div class="pills"><span class="pill">800-53</span><span class="pill">ISO 27001</span><span class="pill">CIS v8</span><span class="pill">SOC 2</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="10-vendor-risk-assessment/">
+        <div class="card-top"><span class="badge">10</span><h3>Third-Party / Vendor Risk Assessment</h3></div>
+        <p>Inherent-vs-residual vendor tiering from a weighted security questionnaire, with onboarding calls.</p>
+        <div class="deliverable"><b>Deliverable:</b> Vendor risk report</div>
+        <div class="pills"><span class="pill">TPRM</span><span class="pill">SIG-lite</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="11-soc2-iso27001-readiness/">
+        <div class="card-top"><span class="badge">11</span><h3>SOC 2 / ISO 27001 Readiness</h3></div>
+        <p>Control-by-control readiness; separates control gaps from evidence gaps; phased remediation roadmap.</p>
+        <div class="deliverable"><b>Deliverable:</b> Readiness assessment</div>
+        <div class="pills"><span class="pill">SOC 2 TSC</span><span class="pill">ISO 27001:2022</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="12-security-policy-suite/">
+        <div class="card-top"><span class="badge">12</span><h3>ISMS Security Policy Suite</h3></div>
+        <p>Five ISO 27001-aligned policies plus a policy-as-code Annex A coverage checker.</p>
+        <div class="deliverable"><b>Deliverable:</b> Policy set + coverage tool</div>
+        <div class="pills"><span class="pill">ISO 27001:2022</span><span class="pill">Policy-as-code</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="13-itgc-sox-controls-testing/">
+        <div class="card-top"><span class="badge">13</span><h3>ITGC / SOX Controls Testing</h3></div>
+        <p>IT-audit workpaper: attribute sampling, exception tracking, deficiency-severity evaluation, reliance opinion.</p>
+        <div class="deliverable"><b>Deliverable:</b> ITGC testing summary</div>
+        <div class="pills"><span class="pill">SOX 404</span><span class="pill">SOC 1 / SOC 2</span><span class="pill">ITGC</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="14-privacy-gdpr-assessment/">
+        <div class="card-top"><span class="badge">14</span><h3>Privacy &amp; Data Protection (GDPR/CCPA)</h3></div>
+        <p>RoPA-driven assessment: DPIA screening, lawful basis, transfer safeguards, retention, DSAR program.</p>
+        <div class="deliverable"><b>Deliverable:</b> Data protection assessment</div>
+        <div class="pills"><span class="pill">GDPR</span><span class="pill">CCPA/CPRA</span><span class="pill">DPIA</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="15-fs-regulatory-compliance/">
+        <div class="card-top"><span class="badge">15</span><h3>FS Regulatory Compliance</h3></div>
+        <p>Gap assessment against EU DORA (5 pillars) and NYDFS Part 500, scored by regulation and pillar.</p>
+        <div class="deliverable"><b>Deliverable:</b> Regulatory gap assessment</div>
+        <div class="pills"><span class="pill">DORA</span><span class="pill">NYDFS 500</span><span class="pill">Financial services</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card consult" href="16-zero-trust-maturity/">
+        <div class="card-top"><span class="badge">16</span><h3>Zero Trust Maturity Assessment</h3></div>
+        <p>CISA ZTMM 2.0 across 5 pillars + 3 cross-cutting capabilities; dependency-aware Zero Trust roadmap.</p>
+        <div class="deliverable"><b>Deliverable:</b> Zero Trust roadmap</div>
+        <div class="pills"><span class="pill">CISA ZTMM 2.0</span><span class="pill">Transformation</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Technical / Analyst track</h2>
+      <span class="tag tech">Offensive · Defensive · Hands-on</span>
+    </div>
+    <p class="section-sub">
+      The hands-on labs that give the advisory work its technical credibility — SOC, pentest, IR, cloud.
+    </p>
+    <div class="grid">
+
+      <a class="card tech" href="01-python-security-toolkit/">
+        <div class="card-top"><span class="badge">01</span><h3>Python Security Toolkit</h3></div>
+        <p>Multithreaded port scanner, password strength/breach auditor, hash identifier &amp; dictionary cracker.</p>
+        <div class="pills"><span class="pill">Recon</span><span class="pill">Passwords</span><span class="pill">Hashing</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card tech" href="02-soc-log-analysis-siem/">
+        <div class="card-top"><span class="badge">02</span><h3>SOC Log Analysis &amp; SIEM</h3></div>
+        <p>Multi-source log correlation engine with detection rules mapped to MITRE ATT&amp;CK, plus incident report.</p>
+        <div class="pills"><span class="pill">SIEM</span><span class="pill">MITRE ATT&amp;CK</span><span class="pill">Detection</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card tech" href="03-vulnerability-assessment-lab/">
+        <div class="card-top"><span class="badge">03</span><h3>Vulnerability Assessment Lab</h3></div>
+        <p>Dockerized vulnerable target, custom HTTP scanner, OWASP Top 10 checklist, CVSS-scored report.</p>
+        <div class="pills"><span class="pill">OWASP Top 10</span><span class="pill">CVSS</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card tech" href="04-incident-response-playbook/">
+        <div class="card-top"><span class="badge">04</span><h3>Incident Response &amp; Timeline</h3></div>
+        <p>NIST 800-61 ransomware playbook plus a multi-source attack-timeline reconstruction tool.</p>
+        <div class="pills"><span class="pill">NIST 800-61</span><span class="pill">Kill chain</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card tech" href="05-network-hardening-ids/">
+        <div class="card-top"><span class="badge">05</span><h3>Network Hardening &amp; IDS</h3></div>
+        <p>Segmentation design, nftables default-deny ruleset, custom Suricata signatures + validator.</p>
+        <div class="pills"><span class="pill">nftables</span><span class="pill">Suricata</span><span class="pill">Segmentation</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+      <a class="card tech" href="06-cloud-security-audit/">
+        <div class="card-top"><span class="badge">06</span><h3>Cloud (AWS) Security Audit</h3></div>
+        <p>CIS AWS Foundations Benchmark auditor over IAM/S3 config; finds public buckets &amp; over-privileged roles.</p>
+        <div class="pills"><span class="pill">CIS AWS</span><span class="pill">IAM</span><span class="pill">S3</span></div>
+        <div class="go">View lab →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Alignment to Big Four cyber &amp; technology-risk service lines</h2></div>
+    <p class="section-sub">How the portfolio maps onto how a Big Four advisory practice structures its work.</p>
+    <div class="map">
+      <div class="maprow"><div class="k">Cyber strategy &amp; transformation</div><div class="v">07 CSF maturity · 08 risk quantification · 16 Zero Trust</div></div>
+      <div class="maprow"><div class="k">Governance, risk &amp; compliance</div><div class="v">09 crosswalk · 11 SOC 2 / ISO 27001 · 12 ISMS policy</div></div>
+      <div class="maprow"><div class="k">Technology risk &amp; controls assurance</div><div class="v">13 ITGC / SOX testing · 11 readiness</div></div>
+      <div class="maprow"><div class="k">Privacy &amp; data protection</div><div class="v">14 GDPR / CCPA assessment</div></div>
+      <div class="maprow"><div class="k">Financial-services regulatory</div><div class="v">15 DORA · NYDFS Part 500</div></div>
+      <div class="maprow"><div class="k">Third-party / supply-chain risk</div><div class="v">10 vendor risk</div></div>
+      <div class="maprow"><div class="k">Cyber defense &amp; managed services</div><div class="v">01 toolkit · 02 SIEM · 04 IR · 06 cloud</div></div>
+      <div class="maprow"><div class="k">Application &amp; infrastructure security testing</div><div class="v">03 web app / OWASP · 05 network / IDS</div></div>
+    </div>
+    <p class="note">
+      All “client” data across the portfolio is illustrative and fictional. Scanning, cracking, and
+      exploitation tooling is for systems you own or are explicitly authorized to test. Every tool has been
+      verified to run end-to-end.
+    </p>
+  </section>
+
+  <footer>
+    <div class="wrap" style="padding:0;">
+      Cybersecurity &amp; Technology Risk Portfolio · 16 labs across two tracks ·
+      Browse the code and generated deliverables in each lab folder.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

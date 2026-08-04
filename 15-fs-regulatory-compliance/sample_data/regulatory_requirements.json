@@ -1,0 +1,35 @@
+{
+  "engagement": {
+    "client": "Contoso Financial Services (illustrative)",
+    "assessor": "Financial Services Regulatory Practice",
+    "date": "2026-07-30",
+    "note": "Illustrative requirement set for a portfolio. Requirement text is summarized; assess against the authoritative regulation and legal counsel before relying on it."
+  },
+  "regulations": {
+    "DORA": "EU Digital Operational Resilience Act (Regulation 2022/2554)",
+    "NYDFS_500": "NYDFS 23 NYCRR Part 500 Cybersecurity Regulation (as amended)"
+  },
+  "requirements": [
+    {"id": "DORA-1.1", "regulation": "DORA", "pillar": "ICT Risk Management", "requirement": "Board-approved ICT risk management framework with defined risk tolerance", "status": "partial", "control_owner": "CISO"},
+    {"id": "DORA-1.2", "regulation": "DORA", "pillar": "ICT Risk Management", "requirement": "Maintain mapping of ICT assets supporting critical/important functions", "status": "not_met", "control_owner": "IT Ops"},
+    {"id": "DORA-2.1", "regulation": "DORA", "pillar": "ICT Incident Management", "requirement": "Classify ICT-related incidents by severity and impact", "status": "met", "control_owner": "SOC"},
+    {"id": "DORA-2.2", "regulation": "DORA", "pillar": "ICT Incident Management", "requirement": "Report major ICT incidents to the competent authority within regulatory deadlines", "status": "partial", "control_owner": "Compliance"},
+    {"id": "DORA-3.1", "regulation": "DORA", "pillar": "Resilience Testing", "requirement": "Establish a digital operational resilience testing programme", "status": "partial", "control_owner": "Security"},
+    {"id": "DORA-3.2", "regulation": "DORA", "pillar": "Resilience Testing", "requirement": "Threat-Led Penetration Testing (TLPT) at least every 3 years for significant entities", "status": "not_met", "control_owner": "Security"},
+    {"id": "DORA-4.1", "regulation": "DORA", "pillar": "ICT Third-Party Risk", "requirement": "Maintain a register of all ICT third-party service arrangements", "status": "not_met", "control_owner": "Procurement"},
+    {"id": "DORA-4.2", "regulation": "DORA", "pillar": "ICT Third-Party Risk", "requirement": "Contractual provisions for critical ICT third parties (exit, audit, subcontracting)", "status": "partial", "control_owner": "Legal"},
+    {"id": "DORA-5.1", "regulation": "DORA", "pillar": "Information Sharing", "requirement": "Arrangements to share cyber threat intelligence with peers", "status": "not_met", "control_owner": "Threat Intel"},
+
+    {"id": "NYDFS-500.02", "regulation": "NYDFS_500", "pillar": "Cybersecurity Program", "requirement": "Maintain a documented cybersecurity program based on risk assessment", "status": "met", "control_owner": "CISO"},
+    {"id": "NYDFS-500.03", "regulation": "NYDFS_500", "pillar": "Policy", "requirement": "Board-approved written cybersecurity policy", "status": "met", "control_owner": "CISO"},
+    {"id": "NYDFS-500.04", "regulation": "NYDFS_500", "pillar": "Governance", "requirement": "Designate a CISO who reports to the board at least annually", "status": "met", "control_owner": "CISO"},
+    {"id": "NYDFS-500.05", "regulation": "NYDFS_500", "pillar": "Testing", "requirement": "Annual penetration testing and bi-annual vulnerability assessments", "status": "partial", "control_owner": "Security"},
+    {"id": "NYDFS-500.07", "regulation": "NYDFS_500", "pillar": "Access", "requirement": "Limit and periodically review user access privileges (least privilege)", "status": "partial", "control_owner": "IT Ops"},
+    {"id": "NYDFS-500.09", "regulation": "NYDFS_500", "pillar": "Risk Assessment", "requirement": "Periodic risk assessment of the information systems", "status": "partial", "control_owner": "Risk"},
+    {"id": "NYDFS-500.12", "regulation": "NYDFS_500", "pillar": "Access", "requirement": "Multi-factor authentication for all remote and privileged access", "status": "partial", "control_owner": "IT Ops"},
+    {"id": "NYDFS-500.14", "regulation": "NYDFS_500", "pillar": "Training", "requirement": "Cybersecurity awareness training including social engineering", "status": "met", "control_owner": "Security"},
+    {"id": "NYDFS-500.15", "regulation": "NYDFS_500", "pillar": "Encryption", "requirement": "Encrypt nonpublic information in transit and at rest", "status": "partial", "control_owner": "IT Ops"},
+    {"id": "NYDFS-500.16", "regulation": "NYDFS_500", "pillar": "Incident Response", "requirement": "Written incident response plan, tested periodically", "status": "met", "control_owner": "SOC"},
+    {"id": "NYDFS-500.17", "regulation": "NYDFS_500", "pillar": "Notification", "requirement": "Notify the superintendent of a cybersecurity event within 72 hours", "status": "partial", "control_owner": "Compliance"}
+  ]
+}

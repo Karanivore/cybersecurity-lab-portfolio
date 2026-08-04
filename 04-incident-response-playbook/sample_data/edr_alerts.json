@@ -1,0 +1,65 @@
+[
+  {
+    "ts": "2026-06-14T09:09:00",
+    "source": "edr",
+    "event": "suspicious_process_creation",
+    "detail": "WINWORD.EXE spawned powershell.exe -enc <base64> (macro-triggered)",
+    "user": "j.rivera",
+    "host": "WKS-0231",
+    "mitre": "T1566.001 / T1059.001"
+  },
+  {
+    "ts": "2026-06-14T09:10:00",
+    "source": "edr",
+    "event": "network_connection",
+    "detail": "powershell.exe established outbound connection to 185.220.101.47:443 (known C2 infrastructure)",
+    "user": "j.rivera",
+    "host": "WKS-0231",
+    "mitre": "T1071.001"
+  },
+  {
+    "ts": "2026-06-14T09:11:00",
+    "source": "edr",
+    "event": "file_write",
+    "detail": "Dropped payload C:\\Users\\j.rivera\\AppData\\Local\\Temp\\svchost_update.exe",
+    "user": "j.rivera",
+    "host": "WKS-0231",
+    "mitre": "T1105"
+  },
+  {
+    "ts": "2026-06-14T09:13:00",
+    "source": "edr",
+    "event": "credential_access",
+    "detail": "LSASS memory access attempt by svchost_update.exe (Mimikatz-like behavior)",
+    "user": "j.rivera",
+    "host": "WKS-0231",
+    "mitre": "T1003.001"
+  },
+  {
+    "ts": "2026-06-14T09:20:00",
+    "source": "edr",
+    "event": "lateral_movement",
+    "detail": "SMB admin-share connection from WKS-0231 to FS-01 using j.rivera domain-admin-delegated credentials",
+    "user": "j.rivera",
+    "host": "FS-01",
+    "mitre": "T1021.002"
+  },
+  {
+    "ts": "2026-06-14T09:22:00",
+    "source": "edr",
+    "event": "shadow_copy_deletion",
+    "detail": "vssadmin.exe delete shadows /all /quiet executed on FS-01",
+    "user": "j.rivera",
+    "host": "FS-01",
+    "mitre": "T1490"
+  },
+  {
+    "ts": "2026-06-14T09:23:00",
+    "source": "edr",
+    "event": "ransom_binary_execution",
+    "detail": "Execution of unsigned binary crypt_locker.exe on FS-01",
+    "user": "SYSTEM",
+    "host": "FS-01",
+    "mitre": "T1486"
+  }
+]

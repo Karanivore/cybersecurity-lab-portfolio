@@ -1,0 +1,104 @@
+{
+  "engagement": {
+    "client": "Contoso Financial Services (illustrative)",
+    "assessor": "GRC Advisory Practice",
+    "date": "2026-07-30",
+    "scales": {
+      "likelihood": {"1": "Rare", "2": "Unlikely", "3": "Possible", "4": "Likely", "5": "Almost certain"},
+      "impact": {"1": "Insignificant", "2": "Minor", "3": "Moderate", "4": "Major", "5": "Severe"}
+    }
+  },
+  "risks": [
+    {
+      "id": "R-01",
+      "title": "Ransomware via phishing leads to business interruption",
+      "asset": "Endpoints, file servers",
+      "threat": "Ransomware operator",
+      "vulnerability": "Macro execution allowed; standing privileged access",
+      "nist_csf": ["PR.AT", "PR.PS", "RC.RP"],
+      "inherent_likelihood": 4,
+      "inherent_impact": 5,
+      "existing_controls": ["EDR", "Immutable backups", "Email filtering"],
+      "control_effectiveness": 0.5,
+      "fair": {"tef_min": 0.5, "tef_mode": 1.5, "tef_max": 3.0, "lm_min": 150000, "lm_mode": 750000, "lm_max": 4000000}
+    },
+    {
+      "id": "R-02",
+      "title": "Public S3 bucket exposes customer PII",
+      "asset": "Customer invoice data (S3)",
+      "threat": "Opportunistic external actor / researcher",
+      "vulnerability": "Bucket public-access misconfiguration (see Lab 6)",
+      "nist_csf": ["PR.DS", "PR.AA"],
+      "inherent_likelihood": 4,
+      "inherent_impact": 5,
+      "existing_controls": ["CSPM alerts"],
+      "control_effectiveness": 0.2,
+      "fair": {"tef_min": 0.3, "tef_mode": 1.0, "tef_max": 2.0, "lm_min": 200000, "lm_mode": 900000, "lm_max": 5000000}
+    },
+    {
+      "id": "R-03",
+      "title": "Credential compromise of over-privileged service account",
+      "asset": "AWS control plane",
+      "threat": "External attacker / insider",
+      "vulnerability": "Wildcard admin policy on service account (see Lab 6)",
+      "nist_csf": ["PR.AA", "GV.RR"],
+      "inherent_likelihood": 3,
+      "inherent_impact": 5,
+      "existing_controls": ["CloudTrail logging"],
+      "control_effectiveness": 0.3,
+      "fair": {"tef_min": 0.2, "tef_mode": 0.8, "tef_max": 2.0, "lm_min": 100000, "lm_mode": 600000, "lm_max": 3000000}
+    },
+    {
+      "id": "R-04",
+      "title": "Third-party breach cascades to Contoso data",
+      "asset": "Data shared with vendors",
+      "threat": "Compromised supplier",
+      "vulnerability": "No vendor risk program (see Lab 10)",
+      "nist_csf": ["GV.SC"],
+      "inherent_likelihood": 3,
+      "inherent_impact": 4,
+      "existing_controls": ["Contractual DPA clauses"],
+      "control_effectiveness": 0.3,
+      "fair": {"tef_min": 0.2, "tef_mode": 0.6, "tef_max": 1.5, "lm_min": 80000, "lm_mode": 350000, "lm_max": 1500000}
+    },
+    {
+      "id": "R-05",
+      "title": "Unpatched internet-facing web app exploited (SQLi)",
+      "asset": "Customer web application",
+      "threat": "Automated exploitation / scanner",
+      "vulnerability": "Unparameterized queries (see Lab 3)",
+      "nist_csf": ["PR.PS", "DE.CM"],
+      "inherent_likelihood": 4,
+      "inherent_impact": 4,
+      "existing_controls": ["WAF", "SIEM detection (Lab 2)"],
+      "control_effectiveness": 0.55,
+      "fair": {"tef_min": 1.0, "tef_mode": 3.0, "tef_max": 8.0, "lm_min": 50000, "lm_mode": 250000, "lm_max": 1200000}
+    },
+    {
+      "id": "R-06",
+      "title": "Regulatory penalty from delayed breach notification",
+      "asset": "Compliance posture",
+      "threat": "Regulator",
+      "vulnerability": "Unclear regulatory notification path (see Lab 7 RS.CO gap)",
+      "nist_csf": ["RS.CO", "GV.OV"],
+      "inherent_likelihood": 2,
+      "inherent_impact": 4,
+      "existing_controls": ["Legal on retainer"],
+      "control_effectiveness": 0.4,
+      "fair": {"tef_min": 0.1, "tef_mode": 0.4, "tef_max": 1.0, "lm_min": 50000, "lm_mode": 300000, "lm_max": 2000000}
+    },
+    {
+      "id": "R-07",
+      "title": "Insider data exfiltration by departing employee",
+      "asset": "Intellectual property, customer lists",
+      "threat": "Malicious insider",
+      "vulnerability": "No DLP; broad data access",
+      "nist_csf": ["PR.DS", "DE.AE"],
+      "inherent_likelihood": 2,
+      "inherent_impact": 4,
+      "existing_controls": ["Offboarding checklist"],
+      "control_effectiveness": 0.35,
+      "fair": {"tef_min": 0.1, "tef_mode": 0.5, "tef_max": 1.2, "lm_min": 40000, "lm_mode": 200000, "lm_max": 900000}
+    }
+  ]
+}

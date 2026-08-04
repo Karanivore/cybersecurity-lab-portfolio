@@ -1,0 +1,84 @@
+{
+  "engagement": {
+    "client": "Contoso Financial Services (illustrative)",
+    "assessor": "Privacy Advisory Practice",
+    "regulations": ["EU GDPR", "UK GDPR", "US CCPA/CPRA"],
+    "date": "2026-07-30",
+    "note": "Illustrative Records of Processing Activities (Art. 30) for a portfolio. Lawful-basis and DPIA logic is a simplified model; real assessments apply DPO judgment and jurisdiction-specific analysis."
+  },
+  "processing_activities": [
+    {
+      "id": "PA-01", "name": "Employee payroll processing",
+      "purpose": "Pay salaries and meet tax/reporting obligations",
+      "data_categories": ["identity", "financial", "national_id"],
+      "special_category": false,
+      "data_subjects": "employees", "volume": 1200,
+      "lawful_basis": "legal_obligation",
+      "systematic_monitoring": false, "large_scale": false,
+      "cross_border_transfer": true, "transfer_safeguard": "SCCs",
+      "retention_defined": true, "dpia_completed": false
+    },
+    {
+      "id": "PA-02", "name": "Customer credit-risk scoring",
+      "purpose": "Automated assessment of loan applications",
+      "data_categories": ["identity", "financial", "behavioral"],
+      "special_category": false,
+      "data_subjects": "customers", "volume": 85000,
+      "lawful_basis": "contract",
+      "systematic_monitoring": true, "large_scale": true,
+      "cross_border_transfer": false, "transfer_safeguard": null,
+      "retention_defined": true, "dpia_completed": false
+    },
+    {
+      "id": "PA-03", "name": "Marketing analytics & profiling",
+      "purpose": "Behavioral profiling for targeted campaigns",
+      "data_categories": ["identity", "behavioral", "location"],
+      "special_category": false,
+      "data_subjects": "customers, prospects", "volume": 240000,
+      "lawful_basis": "none_documented",
+      "systematic_monitoring": true, "large_scale": true,
+      "cross_border_transfer": true, "transfer_safeguard": "none",
+      "retention_defined": false, "dpia_completed": false
+    },
+    {
+      "id": "PA-04", "name": "CCTV in branch offices",
+      "purpose": "Physical security and fraud prevention",
+      "data_categories": ["identity", "biometric_image"],
+      "special_category": false,
+      "data_subjects": "customers, staff, public", "volume": 50000,
+      "lawful_basis": "legitimate_interests",
+      "systematic_monitoring": true, "large_scale": true,
+      "cross_border_transfer": false, "transfer_safeguard": null,
+      "retention_defined": true, "dpia_completed": true
+    },
+    {
+      "id": "PA-05", "name": "Health data for insurance underwriting",
+      "purpose": "Underwrite life/health insurance products",
+      "data_categories": ["identity", "health"],
+      "special_category": true,
+      "data_subjects": "customers", "volume": 30000,
+      "lawful_basis": "explicit_consent",
+      "systematic_monitoring": false, "large_scale": true,
+      "cross_border_transfer": true, "transfer_safeguard": "adequacy_decision",
+      "retention_defined": true, "dpia_completed": true
+    },
+    {
+      "id": "PA-06", "name": "Website contact form",
+      "purpose": "Respond to customer enquiries",
+      "data_categories": ["identity", "contact"],
+      "special_category": false,
+      "data_subjects": "website visitors", "volume": 9000,
+      "lawful_basis": "consent",
+      "systematic_monitoring": false, "large_scale": false,
+      "cross_border_transfer": false, "transfer_safeguard": null,
+      "retention_defined": false, "dpia_completed": false
+    }
+  ],
+  "dsar_program": {
+    "process_documented": true,
+    "avg_response_days": 41,
+    "statutory_limit_days": 30,
+    "rights_supported": ["access", "rectification", "erasure", "restriction", "portability"],
+    "rights_missing": ["objection"]
+  }
+}

@@ -1,0 +1,16 @@
+Jul 22 03:13:11 web01 sshd[master]: Failed password for invalid user ubuntu from 203.0.113.55 port 48678 ssh2
+Jul 22 03:13:18 web01 sshd[master]: Failed password for invalid user ubuntu from 203.0.113.55 port 42205 ssh2
+Jul 22 03:13:22 web01 sshd[master]: Accepted publickey for deploy from 10.0.1.14 port 55116 ssh2
+Jul 22 03:13:30 web01 sshd[master]: Failed password for invalid user ubuntu from 203.0.113.55 port 58916 ssh2
+Jul 22 03:13:34 web01 sshd[master]: Failed password for invalid user root from 203.0.113.55 port 53351 ssh2
+Jul 22 03:13:38 web01 sshd[master]: Failed password for invalid user oracle from 203.0.113.55 port 40561 ssh2
+Jul 22 03:13:45 web01 sshd[master]: Failed password for invalid user admin from 203.0.113.55 port 43427 ssh2
+Jul 22 03:13:53 web01 sshd[master]: Failed password for invalid user admin from 203.0.113.55 port 54821 ssh2
+Jul 22 03:14:02 web01 sshd[master]: Failed password for invalid user root from 203.0.113.55 port 50931 ssh2
+Jul 22 03:14:12 web01 sshd[master]: Failed password for invalid user ubuntu from 203.0.113.55 port 47497 ssh2
+Jul 22 03:14:20 web01 sshd[master]: Accepted password for root from 203.0.113.55 port 58009 ssh2
+Jul 22 03:14:22 web01 sshd[master]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 22 03:16:03 web01 sshd[master]: Accepted publickey for deploy from 172.16.5.3 port 57693 ssh2
+Jul 22 03:24:31 web01 sshd[master]: Accepted publickey for deploy from 192.168.1.44 port 42216 ssh2
+Jul 22 03:24:44 web01 sshd[master]: Accepted publickey for deploy from 10.0.1.9 port 48013 ssh2
+Jul 22 03:26:26 web01 sshd[master]: Accepted publickey for deploy from 10.0.1.14 port 41756 ssh2

@@ -1,0 +1,52 @@
+[
+  {
+    "vendor": "CloudPay Payroll SaaS",
+    "service": "Processes employee payroll and PII",
+    "inherent": {"data_types": ["PII", "financial"], "access_level": "data_processor", "business_criticality": "high"},
+    "responses": {
+      "GOV-1": "yes", "GOV-2": "yes", "CRT-1": "yes", "IAM-1": "yes", "IAM-2": "yes",
+      "DAT-1": "yes", "DAT-2": "yes", "VUL-1": "yes", "VUL-2": "yes", "IR-1": "yes",
+      "IR-2": "yes", "BCP-1": "yes", "SUB-1": "partial", "TRN-1": "yes"
+    }
+  },
+  {
+    "vendor": "QuickAnalytics Marketing Tool",
+    "service": "Ingests customer contact lists for campaign analytics",
+    "inherent": {"data_types": ["PII"], "access_level": "data_processor", "business_criticality": "medium"},
+    "responses": {
+      "GOV-1": "partial", "GOV-2": "partial", "CRT-1": "no", "IAM-1": "partial", "IAM-2": "no",
+      "DAT-1": "partial", "DAT-2": "partial", "VUL-1": "partial", "VUL-2": "no", "IR-1": "partial",
+      "IR-2": "no", "BCP-1": "partial", "SUB-1": "no", "TRN-1": "partial"
+    }
+  },
+  {
+    "vendor": "SecureDoc E-Signature",
+    "service": "Handles contract execution; stores signed agreements",
+    "inherent": {"data_types": ["financial"], "access_level": "data_processor", "business_criticality": "medium"},
+    "responses": {
+      "GOV-1": "yes", "GOV-2": "yes", "CRT-1": "yes", "IAM-1": "yes", "IAM-2": "partial",
+      "DAT-1": "yes", "DAT-2": "yes", "VUL-1": "yes", "VUL-2": "partial", "IR-1": "yes",
+      "IR-2": "yes", "BCP-1": "yes", "SUB-1": "yes", "TRN-1": "yes"
+    }
+  },
+  {
+    "vendor": "OfficeSnacks Delivery",
+    "service": "Office snack delivery; no system or data access",
+    "inherent": {"data_types": [], "access_level": "no_access", "business_criticality": "low"},
+    "responses": {
+      "GOV-1": "no", "GOV-2": "no", "CRT-1": "no", "IAM-1": "na", "IAM-2": "na",
+      "DAT-1": "na", "DAT-2": "na", "VUL-1": "no", "VUL-2": "no", "IR-1": "no",
+      "IR-2": "na", "BCP-1": "partial", "SUB-1": "na", "TRN-1": "no"
+    }
+  },
+  {
+    "vendor": "DataStream Integration Hub",
+    "service": "API integration with admin access to production database",
+    "inherent": {"data_types": ["PII", "financial"], "access_level": "privileged_access", "business_criticality": "high"},
+    "responses": {
+      "GOV-1": "partial", "GOV-2": "no", "CRT-1": "no", "IAM-1": "no", "IAM-2": "no",
+      "DAT-1": "partial", "DAT-2": "no", "VUL-1": "no", "VUL-2": "no", "IR-1": "partial",
+      "IR-2": "no", "BCP-1": "no", "SUB-1": "no", "TRN-1": "no"
+    }
+  }
+]

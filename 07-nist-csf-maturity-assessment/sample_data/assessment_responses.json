@@ -1,0 +1,39 @@
+{
+  "engagement": {
+    "client": "Contoso Financial Services (illustrative)",
+    "assessor": "GRC Advisory Practice",
+    "framework": "NIST Cybersecurity Framework 2.0",
+    "assessment_date": "2026-07-30",
+    "maturity_scale": {
+      "1": "Initial - ad hoc, undocumented, reactive",
+      "2": "Developing - some documentation, inconsistent execution",
+      "3": "Defined - documented, repeatable, consistently applied",
+      "4": "Managed - measured, monitored, and continuously reviewed",
+      "5": "Optimized - quantitatively managed and continuously improved"
+    }
+  },
+  "categories": [
+    {"function": "GOVERN",   "id": "GV.OC", "name": "Organizational Context",                        "current": 2, "target": 4, "notes": "Mission dependencies understood informally; not documented or reviewed."},
+    {"function": "GOVERN",   "id": "GV.RM", "name": "Risk Management Strategy",                        "current": 2, "target": 4, "notes": "No board-approved risk appetite statement; risk decisions ad hoc."},
+    {"function": "GOVERN",   "id": "GV.RR", "name": "Roles, Responsibilities, and Authorities",       "current": 3, "target": 4, "notes": "CISO role defined; RACI exists but not consistently followed."},
+    {"function": "GOVERN",   "id": "GV.PO", "name": "Policy",                                          "current": 2, "target": 4, "notes": "Policies exist but are 3+ years stale and not centrally governed."},
+    {"function": "GOVERN",   "id": "GV.OV", "name": "Oversight",                                       "current": 1, "target": 3, "notes": "No formal program metrics reported to leadership."},
+    {"function": "GOVERN",   "id": "GV.SC", "name": "Cybersecurity Supply Chain Risk Management",     "current": 1, "target": 3, "notes": "No vendor risk program; onboarding lacks security review (see Lab 10)."},
+    {"function": "IDENTIFY", "id": "ID.AM", "name": "Asset Management",                                "current": 2, "target": 4, "notes": "Partial CMDB; cloud and SaaS assets not fully inventoried."},
+    {"function": "IDENTIFY", "id": "ID.RA", "name": "Risk Assessment",                                 "current": 2, "target": 4, "notes": "Annual assessment done but not maintained as a living risk register (see Lab 08)."},
+    {"function": "IDENTIFY", "id": "ID.IM", "name": "Improvement",                                     "current": 2, "target": 3, "notes": "Lessons-learned captured after incidents but not tracked to closure."},
+    {"function": "PROTECT",  "id": "PR.AA", "name": "Identity Management, Authentication & Access Control", "current": 3, "target": 4, "notes": "MFA on most systems; privileged access not yet least-privilege (see Lab 6 findings)."},
+    {"function": "PROTECT",  "id": "PR.AT", "name": "Awareness and Training",                          "current": 3, "target": 4, "notes": "Annual training; phishing simulation program in place but not role-based."},
+    {"function": "PROTECT",  "id": "PR.DS", "name": "Data Security",                                   "current": 2, "target": 4, "notes": "Encryption in transit; at-rest encryption and DLP inconsistent."},
+    {"function": "PROTECT",  "id": "PR.PS", "name": "Platform Security",                               "current": 3, "target": 4, "notes": "Baseline hardening exists; patch SLA not consistently met."},
+    {"function": "PROTECT",  "id": "PR.IR", "name": "Technology Infrastructure Resilience",           "current": 2, "target": 4, "notes": "Network segmentation partial (see Lab 5); no zero-trust roadmap."},
+    {"function": "DETECT",   "id": "DE.CM", "name": "Continuous Monitoring",                           "current": 3, "target": 4, "notes": "SIEM deployed (see Lab 2); coverage gaps in cloud and OT."},
+    {"function": "DETECT",   "id": "DE.AE", "name": "Adverse Event Analysis",                          "current": 2, "target": 4, "notes": "Alert triage reactive; limited detection engineering / tuning."},
+    {"function": "RESPOND",  "id": "RS.MA", "name": "Incident Management",                             "current": 3, "target": 4, "notes": "IR playbooks exist (see Lab 4); not exercised regularly."},
+    {"function": "RESPOND",  "id": "RS.AN", "name": "Incident Analysis",                               "current": 2, "target": 4, "notes": "Timeline reconstruction manual; no standardized forensics workflow."},
+    {"function": "RESPOND",  "id": "RS.CO", "name": "Incident Response Reporting and Communication",  "current": 2, "target": 3, "notes": "Internal comms templates exist; regulatory notification path unclear."},
+    {"function": "RESPOND",  "id": "RS.MI", "name": "Incident Mitigation",                             "current": 3, "target": 4, "notes": "Containment via EDR available; automated isolation not enabled."},
+    {"function": "RECOVER",  "id": "RC.RP", "name": "Incident Recovery Plan Execution",               "current": 2, "target": 4, "notes": "Backups exist and are immutable; restore testing infrequent."},
+    {"function": "RECOVER",  "id": "RC.CO", "name": "Incident Recovery Communication",                "current": 1, "target": 3, "notes": "No defined stakeholder/customer recovery communication plan."}
+  ]
+}

@@ -1,0 +1,59 @@
+# Custom Suricata rules covering the same attack chain detected by the
+# Python SIEM engine in Lab 2 (02-soc-log-analysis-siem), implemented at
+# the network layer instead of the log layer. Deploy on the Security
+# VLAN sensor shown in ../network_segmentation_diagram.md.
+#
+# SID range 1000000-1000099 reserved for this lab (local rules per
+# Suricata/Snort convention: >= 1,000,000 avoids collision with
+# Emerging Threats / registered rule sets).
+
+# --- SSH Brute Force -------------------------------------------------
+alert tcp any any -> $HOME_NET 22 (msg:"LAB SSH Brute Force - Repeated Connection Attempts"; \
+    flow:to_server; flags:S; threshold: type threshold, track by_src, count 5, seconds 120; \
+    classtype:attempted-recon; sid:1000001; rev:1; \
+    metadata:mitre_technique T1110.001, severity high;)
+
+# --- Successful auth immediately after many failures (needs eve.json correlation, alert on volume near auth) ---
+alert tcp $HOME_NET any -> any 22 (msg:"LAB Possible SSH Compromise - High-Volume Source Then Established Session"; \
+    flow:to_client,established; threshold: type limit, track by_src, count 1, seconds 60; \
+    classtype:successful-admin; sid:1000002; rev:1; \
+    metadata:mitre_technique T1078, severity critical;)
+
+# --- Port Scan Detection ----------------------------------------------
+alert tcp any any -> $HOME_NET any (msg:"LAB Port Scan - Multiple Distinct Destination Ports From Single Source"; \
+    flow:to_server; flags:S; detection_filter: track by_src, count 8, seconds 30; \
+    classtype:attempted-recon; sid:1000003; rev:1; \
+    metadata:mitre_technique T1046, severity medium;)
+
+# --- SQL Injection in HTTP request (URI-based) -------------------------
+alert http any any -> $HOME_NET any (msg:"LAB SQL Injection Attempt - UNION SELECT in URI"; \
+    flow:to_server,established; http.uri; content:"UNION"; nocase; content:"SELECT"; nocase; distance:0; \
+    classtype:web-application-attack; sid:1000004; rev:1; \
+    metadata:mitre_technique T1190, severity high;)
+
+alert http any any -> $HOME_NET any (msg:"LAB SQL Injection Attempt - Tautology OR 1=1"; \
+    flow:to_server,established; http.uri; pcre:"/(\%27|\'|\%22|\")\s*(or|OR)\s*(\%27|\'|\%22|\")?1(\%27|\'|\%22|\")?\s*=\s*1/i"; \
+    classtype:web-application-attack; sid:1000005; rev:1; \
+    metadata:mitre_technique T1190, severity high;)
+
+# --- Directory Traversal ------------------------------------------------
+alert http any any -> $HOME_NET any (msg:"LAB Directory Traversal Attempt - Path Traversal Sequence"; \
+    flow:to_server,established; http.uri; content:"../../"; \
+    classtype:web-application-attack; sid:1000006; rev:1; \
+    metadata:mitre_technique T1190, severity high;)
+
+alert http any any -> $HOME_NET any (msg:"LAB Directory Traversal Attempt - /etc/passwd Target"; \
+    flow:to_server,established; http.uri; content:"etc/passwd"; nocase; \
+    classtype:web-application-attack; sid:1000007; rev:1; \
+    metadata:mitre_technique T1190, severity high;)
+
+# --- Ransomware precursor: SMB admin-share + shadow copy deletion pattern ---
+alert smb any any -> $HOME_NET 445 (msg:"LAB SMB Admin Share Access - Potential Lateral Movement"; \
+    flow:to_server,established; smb.share; content:"ADMIN$"; nocase; \
+    classtype:trojan-activity; sid:1000008; rev:1; \
+    metadata:mitre_technique T1021.002, severity high;)
+
+alert dns any any -> any any (msg:"LAB Known C2 Domain Query"; \
+    dns.query; content:"vendor-billing.com"; nocase; \
+    classtype:trojan-activity; sid:1000009; rev:1; \
+    metadata:mitre_technique T1071, severity critical;)

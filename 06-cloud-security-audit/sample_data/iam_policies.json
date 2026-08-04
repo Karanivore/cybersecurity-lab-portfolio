@@ -1,0 +1,44 @@
+[
+  {
+    "policy_name": "DeployBotFullAccess",
+    "attached_to": "svc-deploy-bot",
+    "attached_to_type": "user",
+    "document": {
+      "Statement": [
+        { "Effect": "Allow", "Action": "*", "Resource": "*" }
+      ]
+    }
+  },
+  {
+    "policy_name": "ContractorS3ReadOnly",
+    "attached_to": "contractor-temp",
+    "attached_to_type": "user",
+    "document": {
+      "Statement": [
+        { "Effect": "Allow", "Action": ["s3:GetObject", "s3:ListBucket"], "Resource": "arn:aws:s3:::corp-shared-docs/*" }
+      ]
+    }
+  },
+  {
+    "policy_name": "EngineersDeveloperAccess",
+    "attached_to": "engineering-group",
+    "attached_to_type": "group",
+    "document": {
+      "Statement": [
+        { "Effect": "Allow", "Action": ["ec2:Describe*", "ec2:StartInstances", "ec2:StopInstances"], "Resource": "*" },
+        { "Effect": "Allow", "Action": "s3:*", "Resource": "arn:aws:s3:::corp-app-data/*" }
+      ]
+    }
+  },
+  {
+    "policy_name": "AdminRoleForOps",
+    "attached_to": "ops-admin-role",
+    "attached_to_type": "role",
+    "document": {
+      "Statement": [
+        { "Effect": "Allow", "Action": "iam:*", "Resource": "*" },
+        { "Effect": "Allow", "Action": "*", "Resource": "*" }
+      ]
+    }
+  }
+]

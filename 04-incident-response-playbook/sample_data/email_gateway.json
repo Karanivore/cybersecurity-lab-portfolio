@@ -1,0 +1,18 @@
+[
+  {
+    "ts": "2026-06-14T09:02:00",
+    "source": "email_gateway",
+    "event": "email_delivered",
+    "detail": "Invoice_Overdue_June.docm delivered to j.rivera@corp.local from spoofed sender 'accounts@vendor-billing.com'",
+    "user": "j.rivera",
+    "host": "WKS-0231"
+  },
+  {
+    "ts": "2026-06-14T09:08:00",
+    "source": "email_gateway",
+    "event": "attachment_opened_reported",
+    "detail": "User later reported opening the attachment and enabling macros to 'view the invoice'",
+    "user": "j.rivera",
+    "host": "WKS-0231"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "ts": "2026-06-14T09:24:00",
+    "source": "file_audit",
+    "event": "mass_file_modification",
+    "detail": "Batch 1: 500 files renamed with .locked extension under \\\\FS-01\\shared\\finance",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  },
+  {
+    "ts": "2026-06-14T09:24:03",
+    "source": "file_audit",
+    "event": "mass_file_modification",
+    "detail": "Batch 2: 500 files renamed with .locked extension under \\\\FS-01\\shared\\finance",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  },
+  {
+    "ts": "2026-06-14T09:24:06",
+    "source": "file_audit",
+    "event": "mass_file_modification",
+    "detail": "Batch 3: 500 files renamed with .locked extension under \\\\FS-01\\shared\\finance",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  },
+  {
+    "ts": "2026-06-14T09:24:09",
+    "source": "file_audit",
+    "event": "mass_file_modification",
+    "detail": "Batch 4: 500 files renamed with .locked extension under \\\\FS-01\\shared\\finance",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  },
+  {
+    "ts": "2026-06-14T09:24:12",
+    "source": "file_audit",
+    "event": "mass_file_modification",
+    "detail": "Batch 5: 500 files renamed with .locked extension under \\\\FS-01\\shared\\finance",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  },
+  {
+    "ts": "2026-06-14T09:24:15",
+    "source": "file_audit",
+    "event": "mass_file_modification",
+    "detail": "Batch 6: 500 files renamed with .locked extension under \\\\FS-01\\shared\\finance",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  },
+  {
+    "ts": "2026-06-14T09:25:00",
+    "source": "file_audit",
+    "event": "ransom_note_created",
+    "detail": "README_TO_DECRYPT.txt written to 14 network share root directories",
+    "user": "SYSTEM",
+    "host": "FS-01"
+  }
+]

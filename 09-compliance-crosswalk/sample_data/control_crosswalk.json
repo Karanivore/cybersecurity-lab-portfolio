@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Multi-Framework Control Crosswalk",
+    "note": "Theme-level mappings are illustrative and approximate — verify against the authoritative framework text before relying on them in an audit. Frameworks: NIST CSF 2.0, NIST SP 800-53 Rev.5, ISO/IEC 27001:2022 Annex A, CIS Controls v8, AICPA SOC 2 Trust Services Criteria.",
+    "frameworks": ["NIST_CSF", "NIST_800_53", "ISO_27001", "CIS_v8", "SOC2_TSC"]
+  },
+  "controls": [
+    {"theme": "Access Control & Least Privilege", "status": "partial",
+     "map": {"NIST_CSF": "PR.AA-05", "NIST_800_53": "AC-2, AC-6", "ISO_27001": "A.5.15, A.5.18", "CIS_v8": "5, 6", "SOC2_TSC": "CC6.1, CC6.3"}},
+    {"theme": "Multi-Factor Authentication", "status": "implemented",
+     "map": {"NIST_CSF": "PR.AA-03", "NIST_800_53": "IA-2", "ISO_27001": "A.5.17, A.8.5", "CIS_v8": "6.3, 6.4", "SOC2_TSC": "CC6.1"}},
+    {"theme": "Asset Inventory", "status": "partial",
+     "map": {"NIST_CSF": "ID.AM-01", "NIST_800_53": "CM-8", "ISO_27001": "A.5.9", "CIS_v8": "1, 2", "SOC2_TSC": "CC6.1"}},
+    {"theme": "Vulnerability Management", "status": "partial",
+     "map": {"NIST_CSF": "ID.RA-01, PR.PS-02", "NIST_800_53": "RA-5, SI-2", "ISO_27001": "A.8.8", "CIS_v8": "7", "SOC2_TSC": "CC7.1"}},
+    {"theme": "Logging & Continuous Monitoring", "status": "implemented",
+     "map": {"NIST_CSF": "DE.CM-01", "NIST_800_53": "AU-6, SI-4", "ISO_27001": "A.8.15, A.8.16", "CIS_v8": "8", "SOC2_TSC": "CC7.2"}},
+    {"theme": "Incident Response", "status": "implemented",
+     "map": {"NIST_CSF": "RS.MA-01", "NIST_800_53": "IR-4, IR-8", "ISO_27001": "A.5.24-A.5.28", "CIS_v8": "17", "SOC2_TSC": "CC7.3, CC7.4"}},
+    {"theme": "Data Encryption (at rest & in transit)", "status": "partial",
+     "map": {"NIST_CSF": "PR.DS-01, PR.DS-02", "NIST_800_53": "SC-13, SC-28", "ISO_27001": "A.8.24", "CIS_v8": "3.10, 3.11", "SOC2_TSC": "CC6.7"}},
+    {"theme": "Backup & Recovery", "status": "partial",
+     "map": {"NIST_CSF": "RC.RP-01", "NIST_800_53": "CP-9, CP-10", "ISO_27001": "A.8.13", "CIS_v8": "11", "SOC2_TSC": "A1.2"}},
+    {"theme": "Security Awareness Training", "status": "implemented",
+     "map": {"NIST_CSF": "PR.AT-01", "NIST_800_53": "AT-2", "ISO_27001": "A.6.3", "CIS_v8": "14", "SOC2_TSC": "CC1.4"}},
+    {"theme": "Secure Configuration & Hardening", "status": "partial",
+     "map": {"NIST_CSF": "PR.PS-01", "NIST_800_53": "CM-6", "ISO_27001": "A.8.9", "CIS_v8": "4", "SOC2_TSC": "CC7.1"}},
+    {"theme": "Supply Chain / Third-Party Risk", "status": "not_implemented",
+     "map": {"NIST_CSF": "GV.SC-01", "NIST_800_53": "SR-3, SA-9", "ISO_27001": "A.5.19-A.5.22", "CIS_v8": "15", "SOC2_TSC": "CC9.2"}},
+    {"theme": "Risk Assessment", "status": "partial",
+     "map": {"NIST_CSF": "ID.RA-04", "NIST_800_53": "RA-3", "ISO_27001": "Clause 6.1, A.5.7", "CIS_v8": "18", "SOC2_TSC": "CC3.2"}},
+    {"theme": "Change Management", "status": "implemented",
+     "map": {"NIST_CSF": "PR.PS-01", "NIST_800_53": "CM-3", "ISO_27001": "A.8.32", "CIS_v8": "4", "SOC2_TSC": "CC8.1"}},
+    {"theme": "Network Security & Segmentation", "status": "partial",
+     "map": {"NIST_CSF": "PR.IR-01", "NIST_800_53": "SC-7", "ISO_27001": "A.8.20, A.8.22", "CIS_v8": "12, 13", "SOC2_TSC": "CC6.6"}},
+    {"theme": "Security Policy & Governance", "status": "partial",
+     "map": {"NIST_CSF": "GV.PO-01", "NIST_800_53": "PL-1, PM-1", "ISO_27001": "A.5.1, Clause 5.2", "CIS_v8": "14", "SOC2_TSC": "CC1.1, CC2.2"}},
+    {"theme": "Data Classification & Handling", "status": "not_implemented",
+     "map": {"NIST_CSF": "ID.AM-07", "NIST_800_53": "RA-2, MP-4", "ISO_27001": "A.5.12, A.5.13", "CIS_v8": "3.1, 3.2", "SOC2_TSC": "CC6.1"}}
+  ]
+}

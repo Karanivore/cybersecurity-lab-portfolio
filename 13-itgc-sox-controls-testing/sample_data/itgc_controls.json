@@ -1,0 +1,103 @@
+{
+  "engagement": {
+    "client": "Contoso Financial Services (illustrative)",
+    "auditor": "Technology Risk / IT Audit",
+    "scope": "IT General Controls supporting SOX 404 / SOC 1 reliance",
+    "period": "FY2026 (2026-01-01 to 2026-12-31)",
+    "in_scope_systems": ["Oracle ERP", "Active Directory", "AWS Production", "Payroll SaaS"],
+    "note": "Illustrative workpaper for a portfolio. Sample-size guidance is a simplified attribute-sampling model for low expected deviation; real engagements apply firm methodology and auditor judgment."
+  },
+  "controls": [
+    {
+      "id": "ITGC-AC-01", "domain": "Access to Programs and Data",
+      "description": "New user access is authorized by the system owner before provisioning.",
+      "key_control": true, "frequency": "recurring", "population": 340,
+      "sample_tested": 25, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-AC-02", "domain": "Access to Programs and Data",
+      "description": "User access is removed within 1 business day of termination.",
+      "key_control": true, "frequency": "recurring", "population": 48,
+      "sample_tested": 25, "exceptions": 3, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-AC-03", "domain": "Access to Programs and Data",
+      "description": "Privileged (admin) access is restricted and reviewed quarterly.",
+      "key_control": true, "frequency": "quarterly", "population": 4,
+      "sample_tested": 2, "exceptions": 1, "compensating_control": true,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-AC-04", "domain": "Access to Programs and Data",
+      "description": "User access recertification is performed for all in-scope systems.",
+      "key_control": true, "frequency": "quarterly", "population": 4,
+      "sample_tested": 2, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-AC-05", "domain": "Access to Programs and Data",
+      "description": "Password/authentication configuration enforces MFA and complexity.",
+      "key_control": false, "frequency": "annual", "population": 1,
+      "sample_tested": 1, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-CM-01", "domain": "Program Changes",
+      "description": "Changes to production are tested and approved before migration.",
+      "key_control": true, "frequency": "recurring", "population": 210,
+      "sample_tested": 25, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-CM-02", "domain": "Program Changes",
+      "description": "Segregation of duties: developers cannot migrate their own changes to production.",
+      "key_control": true, "frequency": "recurring", "population": 210,
+      "sample_tested": 25, "exceptions": 5, "compensating_control": false,
+      "test_of_design": "Deficient"
+    },
+    {
+      "id": "ITGC-CM-03", "domain": "Program Changes",
+      "description": "Emergency changes follow a documented break-glass process with post-approval.",
+      "key_control": false, "frequency": "monthly", "population": 12,
+      "sample_tested": 2, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-PD-01", "domain": "Program Development",
+      "description": "New system implementations follow an approved SDLC with UAT sign-off.",
+      "key_control": true, "frequency": "annual", "population": 2,
+      "sample_tested": 2, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-PD-02", "domain": "Program Development",
+      "description": "Data conversion for new systems is validated and reconciled.",
+      "key_control": false, "frequency": "annual", "population": 2,
+      "sample_tested": 2, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-OP-01", "domain": "Computer Operations",
+      "description": "Batch jobs are scheduled and failures are monitored and resolved.",
+      "key_control": true, "frequency": "daily", "population": 250,
+      "sample_tested": 15, "exceptions": 0, "compensating_control": false,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-OP-02", "domain": "Computer Operations",
+      "description": "Production data is backed up and restoration is periodically tested.",
+      "key_control": true, "frequency": "monthly", "population": 12,
+      "sample_tested": 2, "exceptions": 1, "compensating_control": true,
+      "test_of_design": "Effective"
+    },
+    {
+      "id": "ITGC-OP-03", "domain": "Computer Operations",
+      "description": "IT incidents are logged, prioritized, and resolved per SLA.",
+      "key_control": false, "frequency": "recurring", "population": 180,
+      "sample_tested": 25, "exceptions": 2, "compensating_control": true,
+      "test_of_design": "Effective"
+    }
+  ]
+}

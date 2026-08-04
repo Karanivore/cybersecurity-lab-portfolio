@@ -1,0 +1,45 @@
+[
+  {
+    "username": "root",
+    "is_root": true,
+    "mfa_enabled": false,
+    "has_console_password": true,
+    "access_keys": [
+      { "id": "AKIAROOTEXAMPLE01", "created_date": "2025-10-01", "last_used_date": "2026-07-20", "active": true }
+    ]
+  },
+  {
+    "username": "j.rivera",
+    "is_root": false,
+    "mfa_enabled": true,
+    "has_console_password": true,
+    "access_keys": [
+      { "id": "AKIAJRIVERAEXAMPLE1", "created_date": "2026-06-15", "last_used_date": "2026-07-22", "active": true }
+    ]
+  },
+  {
+    "username": "svc-deploy-bot",
+    "is_root": false,
+    "mfa_enabled": false,
+    "has_console_password": false,
+    "access_keys": [
+      { "id": "AKIASVCDEPLOYEXAMPL1", "created_date": "2025-11-10", "last_used_date": "2026-07-21", "active": true }
+    ]
+  },
+  {
+    "username": "m.chen",
+    "is_root": false,
+    "mfa_enabled": true,
+    "has_console_password": true,
+    "access_keys": []
+  },
+  {
+    "username": "contractor-temp",
+    "is_root": false,
+    "mfa_enabled": false,
+    "has_console_password": true,
+    "access_keys": [
+      { "id": "AKIACONTRACTOREXAMPL", "created_date": "2025-08-01", "last_used_date": "2025-09-15", "active": true }
+    ]
+  }
+]

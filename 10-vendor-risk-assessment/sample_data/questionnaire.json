@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "Third-Party Security Assessment Questionnaire (SIG-lite style)",
+    "response_scores": {"yes": 1.0, "partial": 0.5, "no": 0.0, "na": null}
+  },
+  "questions": [
+    {"id": "GOV-1", "domain": "Security Governance",        "weight": 2, "text": "Is there a formal, executive-sponsored information security program with a named owner?"},
+    {"id": "GOV-2", "domain": "Security Governance",        "weight": 1, "text": "Are security policies reviewed and approved at least annually?"},
+    {"id": "CRT-1", "domain": "Certifications",             "weight": 3, "text": "Do you hold a current SOC 2 Type II or ISO/IEC 27001 certification?"},
+    {"id": "IAM-1", "domain": "Access Control",             "weight": 3, "text": "Is MFA enforced for all remote and administrative access?"},
+    {"id": "IAM-2", "domain": "Access Control",             "weight": 2, "text": "Is access granted on a least-privilege basis and reviewed periodically?"},
+    {"id": "DAT-1", "domain": "Data Protection",            "weight": 3, "text": "Is customer data encrypted at rest and in transit with modern algorithms?"},
+    {"id": "DAT-2", "domain": "Data Protection",            "weight": 2, "text": "Is data segregated logically or physically between tenants/customers?"},
+    {"id": "VUL-1", "domain": "Vulnerability Management",   "weight": 2, "text": "Do you perform regular vulnerability scanning and remediate to a defined SLA?"},
+    {"id": "VUL-2", "domain": "Vulnerability Management",   "weight": 2, "text": "Is an independent penetration test conducted at least annually?"},
+    {"id": "IR-1",  "domain": "Incident Response",          "weight": 3, "text": "Do you have a documented incident response plan with defined breach-notification timelines?"},
+    {"id": "IR-2",  "domain": "Incident Response",          "weight": 2, "text": "Will you notify customers of a security incident affecting their data within a contractual timeframe?"},
+    {"id": "BCP-1", "domain": "Resilience",                 "weight": 2, "text": "Are backups performed, tested, and are RTO/RPO objectives defined?"},
+    {"id": "SUB-1", "domain": "Fourth-Party Risk",          "weight": 2, "text": "Do you assess and monitor the security of your own subprocessors/vendors?"},
+    {"id": "TRN-1", "domain": "Awareness",                  "weight": 1, "text": "Is security awareness training mandatory for all staff at least annually?"}
+  ]
+}
