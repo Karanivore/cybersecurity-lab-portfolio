@@ -129,4 +129,3 @@ All scanning, password auditing, hash analysis, exploitation, and security-testi
 Do not run these tools against third-party systems, networks, accounts, or data without written authorization.
 
 All client names, organizations, users, findings, and business scenarios included in the GRC labs are fictional and are provided only for educational and portfolio purposes.
-````
